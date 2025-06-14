@@ -20,7 +20,8 @@ let package = Package(
             name: "SwiftHelper",
             dependencies: [
                 .product(name: "ApphudSDK", package: "ApphudSDK")
-            ]
+            ],
+            path: "Sources"
         ),
     ]
 )
