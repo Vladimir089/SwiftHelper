@@ -202,7 +202,7 @@ SwiftHelper.apphudHelper.isProUser() -> Bool
 ```swift
 import  SwiftHelper
 
-SwiftHelper.apphudHelper.restoreAllProducts(completion: **@escaping** (Bool) -> Void)
+SwiftHelper.apphudHelper.restoreAllProducts(completion: @escaping (Bool) -> Void)
 ```
 
  - #### Приобретение подписки
