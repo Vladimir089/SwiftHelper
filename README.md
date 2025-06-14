@@ -1,7 +1,7 @@
 
 # Swift Helper 🚀
 
-![Swift](https://img.shields.io/badge/Swift-5.7+-orange?style=flat&logo=swift) ![Platform](https://img.shields.io/badge/Platform-iOS%2013%2B-blue) ![License](https://img.shields.io/badge/License-MIT-lightgrey)
+![Swift](https://img.shields.io/badge/Swift-5.7+-orange?style=flat&logo=swift) ![Platform](https://img.shields.io/badge/Platform-iOS%2016%2B-blue) 
 
   
 
