@@ -13,7 +13,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/apphud/ApphudSDK.git", .upToNextMajor(from: "3.7.1"))
+        .package(url: "https://github.com/apphud/ApphudSDK.git", .upToNextMajor(from: "3.5.9"))
     ],
     targets: [
         .target(
