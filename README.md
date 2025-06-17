@@ -52,13 +52,13 @@
 
 - [x] Проверка статуса Premium-подписки
 
-- [ ] UI компоненты для paywall
+- [x] UI компоненты для paywall (частично)
 
   
 
 ### Скоро в релизах 🚧
 
-- [ ] Готовые UI-компоненты
+- [x] Больше готовых UI-компоненты
 
   
 
@@ -96,7 +96,7 @@
 dependencies: [
     .package(
         url: "https://github.com/Vladimir089/SwiftHelper.git",
-        from: "0.1.0"
+        from: "0.1.1"
             )
 ]
 
@@ -223,8 +223,53 @@ import  SwiftHelper
 SwiftHelper.apphudHelper.purchaseConsumableProduct(product: ApphudProduct, completion: @escaping (Bool) -> Void)
 ```
 
-### Работа с  UI 💸
-#### В разработке 
+### Работа с  UI 🤩
+
+- #### Создание анимированный кнопки
+
+
+```swift
+import  SwiftHelper
+
+SwiftHelper.uiHelper.customAnimateButton
+```
+
+- #### Быстрое создание изображение
+
+
+```swift
+import  SwiftHelper
+
+SwiftHelper.uiHelper.customImageView
+```
+
+- #### Быстрое создание лэйбла
+
+
+```swift
+import  SwiftHelper
+
+SwiftHelper.uiHelper.customLabel
+```
+
+- #### Анимация нажатия любой кнопки
+
+
+```swift
+import  SwiftHelper
+
+button.animateButton()
+```
+
+- #### Изменение размера изображения
+
+
+```swift
+import  SwiftHelper
+
+image.resize()
+```
+
 
 ## Вклад в проект 🤝
 
