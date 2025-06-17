@@ -231,16 +231,16 @@ SwiftHelper.apphudHelper.purchaseConsumableProduct(product: ApphudProduct, compl
 ```swift
 import  SwiftHelper
 
-SwiftHelper.uiHelper.customAnimateButton
+SwiftHelper.uiHelper.customAnimateButton(bgColor: UIColor? = nil , bgImage: UIImage?, title: String?, titleColor: UIColor? = nil, fontTitleColor: UIFont? = nil, cornerRadius: CGFloat? = nil, borderWidth: CGFloat? = nil , borderColor: UIColor? = nil) -> UIButton
 ```
 
-- #### Быстрое создание изображение
+- #### Быстрое создание ImageView
 
 
 ```swift
 import  SwiftHelper
 
-SwiftHelper.uiHelper.customImageView
+SwiftHelper.uiHelper.customImageView(image: UIImage, isClipped: Bool? = nil, mode: UIImageView.ContentMode, cornerRadius: CGFloat? = 0, borderWidth: CGFloat? = nil , borderColor: UIColor? = nil) -> UIImageView
 ```
 
 - #### Быстрое создание лэйбла
@@ -249,7 +249,7 @@ SwiftHelper.uiHelper.customImageView
 ```swift
 import  SwiftHelper
 
-SwiftHelper.uiHelper.customLabel
+SwiftHelper.uiHelper.customLabel(text: String, font: UIFont, color: UIColor? = nil, textAligment: NSTextAlignment? = nil, numberLines: Int? = nil) -> UILabel
 ```
 
 - #### Анимация нажатия любой кнопки
@@ -267,7 +267,7 @@ button.animateButton()
 ```swift
 import  SwiftHelper
 
-image.resize()
+image.resize(targetSize: CGSize) -> UIImage 
 ```
 
 
