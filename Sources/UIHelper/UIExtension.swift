@@ -9,6 +9,11 @@ import Foundation
 import UIKit
 
 extension UIButton {
+    
+    /// Добавляет анимацию нажатия на кнопку.
+    ///
+    /// При нажатии кнопка уменьшается в размере и воспроизводится лёгкий тактильный отклик (`UIImpactFeedbackGenerator`).
+    /// Когда палец убирается или отменяется касание — кнопка возвращается к исходному размеру.
     public func animateButton() {
         self.addTarget(self, action: #selector(touchUpInside), for: .touchDown)
         self.addTarget(self, action: #selector(returnSize), for: [.touchUpInside, .touchCancel, .touchDragExit])
@@ -31,6 +36,13 @@ extension UIButton {
 
 extension UIImage {
     
+    /// Изменяет размер изображения до заданных пропорций, сохраняя его аспектное соотношение.
+    ///
+    /// - Parameter targetSize: Целевой размер, в который необходимо вписать изображение.
+    /// - Returns: Новое изображение, отмасштабированное с сохранением пропорций.
+    ///
+    /// Метод определяет соотношения сторон и масштабирует изображение по меньшему из коэффициентов (ширина или высота),
+    /// чтобы избежать искажения. Отрисовка производится с учётом текущего `UIScreen.main.scale`.
     @MainActor
     public func resize(targetSize: CGSize) -> UIImage {
         let size = self.size

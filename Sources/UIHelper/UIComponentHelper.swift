@@ -11,6 +11,18 @@ import UIKit
 
 public class UIComponentHelper {
     
+    /// Создаёт анимированную кнопку с возможностью настройки внешнего вида.
+    ///
+    /// - Parameters:
+    ///   - bgColor: Цвет фона кнопки. По умолчанию — прозрачный.
+    ///   - bgImage: Фоновое изображение кнопки.
+    ///   - title: Текст заголовка кнопки.
+    ///   - titleColor: Цвет заголовка. (Не используется напрямую — потенциально можно добавить.)
+    ///   - fontTitleColor: Шрифт заголовка. По умолчанию `.systemFont(ofSize: 12, weight: .regular)`.
+    ///   - cornerRadius: Радиус скругления углов. По умолчанию 0.
+    ///   - borderWidth: Толщина границы. По умолчанию 0.
+    ///   - borderColor: Цвет границы. По умолчанию — прозрачный.
+    /// - Returns: Настроенная и анимированная `UIButton`.
     @MainActor
     public func customAnimateButton(bgColor: UIColor? = nil , bgImage: UIImage?, title: String?, titleColor: UIColor? = nil, fontTitleColor: UIFont? = nil, cornerRadius: CGFloat? = nil, borderWidth: CGFloat? = nil , borderColor: UIColor? = nil) -> UIButton {
         let button = UIButton()
@@ -25,6 +37,16 @@ public class UIComponentHelper {
         return button
     }
     
+    /// Создаёт UIImageView с кастомными параметрами.
+    ///
+    /// - Parameters:
+    ///   - image: Изображение для отображения.
+    ///   - isClipped: Обрезать ли содержимое по границам. По умолчанию `true`.
+    ///   - mode: Режим отображения изображения (`contentMode`).
+    ///   - cornerRadius: Радиус скругления углов. По умолчанию 0.
+    ///   - borderWidth: Толщина границы. По умолчанию 0.
+    ///   - borderColor: Цвет границы. По умолчанию — прозрачный.
+    /// - Returns: Настроенный `UIImageView`.
     @MainActor
     public func customImageView(image: UIImage, isClipped: Bool? = nil, mode: UIImageView.ContentMode, cornerRadius: CGFloat? = 0, borderWidth: CGFloat? = nil , borderColor: UIColor? = nil) -> UIImageView {
         let imageView = UIImageView(image: image)
@@ -36,6 +58,15 @@ public class UIComponentHelper {
         return imageView
     }
     
+    /// Создаёт `UILabel` с настраиваемыми параметрами.
+        ///
+        /// - Parameters:
+        ///   - text: Отображаемый текст.
+        ///   - font: Шрифт текста.
+        ///   - color: Цвет текста. По умолчанию — белый.
+        ///   - textAligment: Выравнивание текста. По умолчанию `.left`.
+        ///   - numberLines: Количество строк. По умолчанию — 1.
+        /// - Returns: Настроенный `UILabel`.
     @MainActor
     public func customLabel(text: String, font: UIFont, color: UIColor? = nil, textAligment: NSTextAlignment? = nil, numberLines: Int? = nil) -> UILabel {
         let label = UILabel()
