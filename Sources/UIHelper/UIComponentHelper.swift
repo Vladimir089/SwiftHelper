@@ -12,7 +12,6 @@ import UIKit
 public class UIComponentHelper {
     
     /// Создаёт анимированную кнопку с возможностью настройки внешнего вида.
-    ///
     /// - Parameters:
     ///   - bgColor: Цвет фона кнопки. По умолчанию — прозрачный.
     ///   - bgImage: Фоновое изображение кнопки.
@@ -28,6 +27,7 @@ public class UIComponentHelper {
         let button = UIButton()
         button.layer.cornerRadius = cornerRadius ?? 0
         button.backgroundColor = bgColor ?? .clear
+        button.setTitleColor(titleColor ?? .white, for: .normal)
         button.titleLabel?.font = fontTitleColor ?? .systemFont(ofSize: 12, weight: .regular)
         button.setTitle(title ?? "", for: .normal)
         button.setBackgroundImage(bgImage ?? UIImage(), for: .normal)
@@ -38,7 +38,6 @@ public class UIComponentHelper {
     }
     
     /// Создаёт UIImageView с кастомными параметрами.
-    ///
     /// - Parameters:
     ///   - image: Изображение для отображения.
     ///   - isClipped: Обрезать ли содержимое по границам. По умолчанию `true`.
@@ -59,14 +58,13 @@ public class UIComponentHelper {
     }
     
     /// Создаёт `UILabel` с настраиваемыми параметрами.
-        ///
-        /// - Parameters:
-        ///   - text: Отображаемый текст.
-        ///   - font: Шрифт текста.
-        ///   - color: Цвет текста. По умолчанию — белый.
-        ///   - textAligment: Выравнивание текста. По умолчанию `.left`.
-        ///   - numberLines: Количество строк. По умолчанию — 1.
-        /// - Returns: Настроенный `UILabel`.
+    /// - Parameters:
+    ///   - text: Отображаемый текст.
+    ///   - font: Шрифт текста.
+    ///   - color: Цвет текста. По умолчанию — белый.
+    ///   - textAligment: Выравнивание текста. По умолчанию `.left`.
+    ///   - numberLines: Количество строк. По умолчанию — 1.
+    /// - Returns: Настроенный `UILabel`.
     @MainActor
     public func customLabel(text: String, font: UIFont, color: UIColor? = nil, textAligment: NSTextAlignment? = nil, numberLines: Int? = nil) -> UILabel {
         let label = UILabel()
@@ -77,8 +75,54 @@ public class UIComponentHelper {
         label.numberOfLines = numberLines ?? 1
         return label
     }
+
+
+    /// Вызывает вибрацию с указаным стилем.
+    /// - Parameter type: HapticEffect
+    @MainActor
+    public func applyHapticEffect(type: HapticEffect) {
+        switch type {
+        case .Succes:
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.success)
+        case .Warning:
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.warning)
+        case .Error:
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.error)
+        case .Light:
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred(intensity: 1.0)
+        case .Medium:
+            let generator = UIImpactFeedbackGenerator(style: .medium)
+            generator.impactOccurred(intensity: 1.0)
+        case .Heavy:
+            let generator = UIImpactFeedbackGenerator(style: .heavy)
+            generator.impactOccurred(intensity: 1.0)
+        case .Rigid:
+            let generator = UIImpactFeedbackGenerator(style: .rigid)
+            generator.impactOccurred(intensity: 1.0)
+        case .Soft:
+            let generator = UIImpactFeedbackGenerator(style: .soft)
+            generator.impactOccurred(intensity: 1.0)
+        case .Selection:
+            let generator = UISelectionFeedbackGenerator()
+            generator.selectionChanged()
+        }
+    }
     
-  
+    public enum HapticEffect {
+        case Succes
+        case Warning
+        case Error
+        case Light
+        case Medium
+        case Heavy
+        case Rigid
+        case Soft
+        case Selection
+    }
 }
 
 

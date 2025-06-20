@@ -252,6 +252,15 @@ import  SwiftHelper
 SwiftHelper.uiHelper.customLabel(text: String, font: UIFont, color: UIColor? = nil, textAligment: NSTextAlignment? = nil, numberLines: Int? = nil) -> UILabel
 ```
 
+- #### Вызов вибрации с разными стилями - Haptic Effect
+
+
+```swift
+import  SwiftHelper
+
+SwiftHelper.uiHelper.applyHapticEffect(type: HapticEffect)
+```
+
 - #### Анимация нажатия любой кнопки
 
 
